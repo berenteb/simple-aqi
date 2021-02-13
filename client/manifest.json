@@ -1,0 +1,10 @@
+{
+    "name": "Simple Air Quality Widget",
+    "short_name": "SimpleAQI",
+    "theme_color": "#456268",
+    "background_color": "#fcf8ec",
+    "display": "standalone",
+    "orientation": "portrait",
+    "scope": "/",
+    "start_url": "/"
+  }

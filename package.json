@@ -1,0 +1,24 @@
+{
+  "name": "simple-aqi",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "description": "Air Quality client and server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "air",
+    "quality",
+    "server",
+    "client",
+    "api"
+  ],
+  "author": "Bálint Berente",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "colors": "^1.4.0",
+    "express": "^4.17.1"
+  }
+}

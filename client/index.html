@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Air Quality Widget</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" sizes="57x57" href="./logo/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./logo/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./logo/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./logo/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./logo/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./logo/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./logo/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./logo/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./logo/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./logo/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./logo/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./logo/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./logo/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#d0e8f2">
+    <meta name="msapplication-TileImage" content="./logo/ms-icon-144x144.png">
+    <meta name="theme-color" content="#456268">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <div class="errorContainer columnFlex" id="error">
+            <div class="errorField seventy columnFlex" onclick="dismissError()">
+                <h2 id="errorMessage">No errors</h2>
+                <p>Click to dismiss!</p>
+            </div>
+        </div>
+        <div class="inputContainer columnFlex seventy">
+            <div class="inputField">
+                <input type="text" id="locationInput">
+                <div id="searchButton" class="columnFlex" onclick="search()">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="44"
+                        height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#456268" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <circle cx="10" cy="10" r="7" />
+                        <line x1="21" y1="21" x2="15" y2="15" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="mainInformationContainer seventy columnFlex">
+            <div class="dataField">
+                <div class="dataFieldTitleContainer columnFlex">
+                    <p class="dataFieldTitle dataFieldText">AQI</p>
+                </div>
+                <div class="dataFieldValueContainer columnFlex" id="aqiValueContainer">
+                    <p class="dataFieldValue dataFieldText" id="aqiValue">...</p>
+                </div>
+            </div>
+        </div>
+        <div class="scrollIndicatorContainer seventy columnFlex">
+            <div class="scrollIndicator">
+                <div class="dot"></div>
+            </div>
+        </div>
+        <div class="detailedInformationContainer seventy columnFlex">
+            <div class="dataField">
+                <div class="dataFieldTitleContainer columnFlex">
+                    <p class="dataFieldTitle dataFieldText">PM2.5</p>
+                </div>
+                <div class="dataFieldValueContainer columnFlex">
+                    <p class="dataFieldValue dataFieldText" id="pm25value">...</p>
+                </div>
+            </div>
+            <div class="dataField">
+                <div class="dataFieldTitleContainer columnFlex">
+                    <p class="dataFieldTitle dataFieldText">PM10</p>
+                </div>
+                <div class="dataFieldValueContainer columnFlex">
+                    <p class="dataFieldValue dataFieldText" id="pm10value">...</p>
+                </div>
+            </div>
+            <div class="dataField">
+                <div class="dataFieldTitleContainer columnFlex">
+                    <p class="dataFieldTitle dataFieldText">O3</p>
+                </div>
+                <div class="dataFieldValueContainer columnFlex">
+                    <p class="dataFieldValue dataFieldText" id="o3value">...</p>
+                </div>
+            </div>
+            <div class="dataField">
+                <div class="dataFieldTitleContainer columnFlex">
+                    <p class="dataFieldTitle dataFieldText">NO2</p>
+                </div>
+                <div class="dataFieldValueContainer columnFlex">
+                    <p class="dataFieldValue dataFieldText" id="no2value">...</p>
+                </div>
+            </div>
+            <div class="dataField">
+                <div class="dataFieldTitleContainer columnFlex">
+                    <p class="dataFieldTitle dataFieldText">SO2</p>
+                </div>
+                <div class="dataFieldValueContainer columnFlex">
+                    <p class="dataFieldValue dataFieldText" id="so2value">...</p>
+                </div>
+            </div>
+            <div class="dataField">
+                <div class="dataFieldTitleContainer columnFlex">
+                    <p class="dataFieldTitle dataFieldText">CO</p>
+                </div>
+                <div class="dataFieldValueContainer columnFlex">
+                    <p class="dataFieldValue dataFieldText" id="covalue">...</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer columnFlex">
+            <div class="footerField">
+                <p>&copy; 2021, Bálint Berente</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

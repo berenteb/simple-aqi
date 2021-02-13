@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
+
+:root{
+    --background: #fcf8ec;
+    --front1: #456268;
+    --front2: #79a3b1;
+    --front3: #d0e8f2;
+    --good: #009966;
+    --moderate: #FFDE33;
+    --sensitive: #FF9933;
+    --unhealthy: #CC0033;
+    --very-unhealthy: #660099;
+    --hazardous: #7E0023;
+    --shadow-blur: 2vmin;
+}
+
+body{
+    background-color: var(--background);
+    width: 100%;
+    min-height: 100%;
+    min-height: -webkit-fill-available;
+    height: auto;
+    margin: 0;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+/* Error */
+#error{
+    display: none;
+}
+
+.errorContainer{
+    position: fixed;
+    color: white;
+    width: 100%;
+    bottom: 0;
+    z-index: 100;
+    opacity: 70%;
+}
+
+.errorField{
+    transition: .5s;
+    cursor: pointer;
+    border-left: 10px solid var(--hazardous);
+    border-right: 10px solid var(--hazardous);
+    background-color: var(--unhealthy);
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px var(--shadow-blur) 0px var(--unhealthy);
+    -moz-box-shadow: 0px 0px var(--shadow-blur) 0px var(--unhealthy);
+    box-shadow: 0px 0px var(--shadow-blur) 0px var(--unhealthy);
+}
+
+/* App and globals */
+
+.seventy{
+    width: 70%;
+    margin: auto;
+}
+
+.columnFlex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.app{
+    background-color: var(--background);
+    position: absolute;
+    min-height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+/* Searchbar */
+
+#locationInput{
+    height: 80%;
+    margin: 0;
+    padding: 5%;
+    border-bottom-left-radius: 100px;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border: none;
+    border-right: 1px solid var(--front1);
+    font-size: 5vmin;
+    color: var(--front1);
+}
+
+#searchButton{
+    height: 80%;
+    margin: 0;
+    padding: 5%;
+    border-bottom-right-radius: 100px;
+    border-top-right-radius: 100px;
+    border: none;
+    border-left: 1px solid var(--front1);
+    background-color: white;
+    cursor: pointer;
+}
+
+.inputContainer{
+    margin: auto;
+    height: 15vh;
+}
+
+.inputField{
+    height: 5vh;
+    width: fit-content;
+    max-width: 80%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+/* Scroll Indicator */
+.scrollIndicatorContainer{
+    height: 10vh;
+    margin-bottom: 5vh;
+}
+
+.scrollIndicator{
+    border: 3px solid var(--front1);
+    height: 7vh;
+    width: 1.5vh;
+    padding: 1vh 1.75vh;
+    border-radius: 300px;
+}
+
+.dot {
+    height: 1.5vh;
+    width: 1.5vh;
+    background-color: var(--front1);
+    border-radius: 1vh;
+    animation-name: scroll;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes scroll{
+    0% {
+        transform: translateY(0%);
+    }
+    50%{
+        transform: translateY(5vh);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+.dataField{
+    width: 30vmin;
+    height: 30vmin;
+    margin: 5vh 0;
+}
+
+.dataFieldTitleContainer{
+    height: 30%;
+    background-color: var(--front1);
+    border-top-left-radius: 8vmin;
+    border-top-right-radius: 8vmin;
+    color: var(--front3);
+    -webkit-box-shadow: 0px 0px var(--shadow-blur) 0px var(--front1);
+    -moz-box-shadow: 0px 0px var(--shadow-blur) 0px var(--front1);
+    box-shadow: 0px 0px var(--shadow-blur) 0px var(--front1);
+}
+
+.dataFieldValueContainer{
+    height: 70%;
+    background-color: var(--front2);
+    border-bottom-left-radius: 8vmin;
+    border-bottom-right-radius: 8vmin;
+    -webkit-box-shadow: 0px 0px var(--shadow-blur) 0px var(--front2);
+    -moz-box-shadow: 0px 0px var(--shadow-blur) 0px var(--front2);
+    box-shadow: 0px 0px var(--shadow-blur) 0px var(--front2);
+}
+
+.dataFieldText {
+    font-size: 5vmin;
+    color: var(--front3);
+}
+
+.mainInformationContainer{
+    height: 70vh;
+}
+
+.footer{
+    background-color: var(--front1);
+    color: var(--front3);
+    padding: 30px;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root{
+        --background: #000000;
+    }
+}
