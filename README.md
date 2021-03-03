@@ -1,3 +1,4 @@
+![Version: see package.json](https://img.shields.io/github/package-json/v/berenteb/simple-aqi)
 # Simple Air Quality Application by Bálint Berente
 Get the current Air Quality Index (AQI) and gas amount for the city you want! The app saves your last successful query to your browser's local storage.
 We do NOT collect any data from you!
