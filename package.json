@@ -1,6 +1,6 @@
 {
   "name": "simple-aqi",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "commonjs",
   "description": "Air Quality client and server",
   "main": "index.js",
