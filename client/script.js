@@ -77,14 +77,29 @@ async function getData(cityArg = city) {
 }
 
 function updateValues(data) {
-    document.getElementById("aqiValue").innerHTML = data.aqi || "N/A";
-    document.getElementById("pm25value").innerHTML = data.gases.pm25.v || "N/A";
-    document.getElementById("pm10value").innerHTML = data.gases.pm10.v || "N/A";
-    document.getElementById("o3value").innerHTML = data.gases.o3.v || "N/A";
-    document.getElementById("no2value").innerHTML = data.gases.no2.v || "N/A";
-    document.getElementById("so2value").innerHTML = data.gases.so2.v || "N/A";
-    document.getElementById("covalue").innerHTML = data.gases.co.v || "N/A";
+    getValueFromData("aqi", data);
+    getValueFromData("pm25", data);
+    getValueFromData("pm10", data);
+    getValueFromData("o3", data);
+    getValueFromData("no2", data);
+    getValueFromData("so2", data);
+    getValueFromData("co", data);
     editColors(data);
+}
+
+function getValueFromData(field, data){
+    if(field === "aqi"){
+        var parsed = data.aqi;
+    }else{
+        var parsed = data.gases[field];
+        if(parsed) parsed = parsed.v;
+    }
+    if(parsed){
+        document.getElementById(field+"value").innerHTML = parsed;
+    }else{
+        document.getElementById(field+"value").innerHTML = "N/A";
+        // displayError("Some fields are not available for this location!");
+    }
 }
 
 function editColors(data = {}) {
@@ -117,7 +132,7 @@ function editColors(data = {}) {
     }
     var aqiContainerStyle = document.getElementById("aqiValueContainer").style;
     aqiContainerStyle.backgroundColor = bgcolor;
-    document.getElementById("aqiValue").style.color = fontcolor;
+    document.getElementById("aqivalue").style.color = fontcolor;
     aqiContainerStyle.boxShadow = shadowStyle + bgcolor
 }
 

@@ -18,6 +18,14 @@ app.post('/data', (req, res)=>{
     })
 })
 
+app.post('/mock', (req, res)=>{
+    res.send({
+        aqi: undefined,
+        gases: {
+        }
+    });
+})
+
 app.listen(config.server_port, ()=>{
     console.log('Server listening on '+config.server_port);
 });
