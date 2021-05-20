@@ -1,6 +1,6 @@
 const express = require("express");
 const colors = require("colors");
-const https = require("https");
+const http = require("http");
 const config = require('./config.json')
 const app = express();
 
@@ -28,7 +28,7 @@ function makeApiCall(city){
             reject("No location was provided");
         }
         var url = `${config.url}${city}/?token=${config.token}`;
-        https.get(url,(response)=>{
+        http.get(url,(response)=>{
             var str = '';
             response.on('data',(chunk)=>{
                 str += chunk;
