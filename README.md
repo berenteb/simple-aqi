@@ -3,8 +3,6 @@
 Get the current Air Quality Index (AQI) and gas amount for the city you want! The app saves your last successful query to your browser's local storage.
 We do NOT collect any data from you!
 
-Try it here: [SimpleAQI](http://aqi.berente.net)
-
 ![Demo](./demo_main.png)
 
 Data is provided by: [Aqicn.org](https://aqicn.org/) via their API.
